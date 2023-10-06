@@ -11,8 +11,8 @@ services:
     environment:
       - PORT=3000
       - NODE_ENV=production
-      - MONGO_USERNAME=${MONGO_USERNAME}
-      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_USERNAME=keerthana
+      - MONGO_PASSWORD=123456789Kk
       - MONGO_PORT=27017
       - MONGO_IP=mongo
       - SESSION_SECRET=secret
@@ -20,8 +20,8 @@ services:
   
   mongo:
     environment:
-    - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-    - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    - MONGO_INITDB_ROOT_USERNAME=keerthana
+    - MONGO_INITDB_ROOT_PASSWORD=123456789Kk
     # env_file:
     #   - ./.env
 

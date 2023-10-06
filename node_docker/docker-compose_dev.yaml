@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+   ports:
+    - "3000:80"
+  node-container:
+    build:
+      context: .
+      args:
+       NODE_ENV: development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - MONGO_USERNAME=keerthana
+      - MONGO_PORT=27017
+      - MONGO_IP=mongo
+      - SESSION_SECRET=secret
+    command: npm run dev
+
+  mongo:
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=keerthana
+    - MONGO_INITDB_ROOT_PASSWORD=123456789Kk
+    # env_file:
+    #   - ./.env
+
